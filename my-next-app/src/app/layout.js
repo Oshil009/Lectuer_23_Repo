@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Navigation from "./components/Navigation";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,7 +19,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <header className="main-header">
+        <Navigation/>
+        </header>
+        <main className="main-content">
+          {children}
+        </main>
+        <footer className="main-footer">
+          <p>© {new Date().getFullYear()} Ezzaldeen Albitar. All rights reserved.</p>
+        </footer>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,10 @@
+import './loading.css';
+
+export default function Loading() {
+    return (
+        <div className="loading-container">
+            <div className="spinner"></div>
+            <p className="loading-text">Loading Dashboard...</p>
+        </div>
+    );
+}
